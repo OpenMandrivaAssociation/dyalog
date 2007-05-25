@@ -1,7 +1,7 @@
 %define name	dyalog
 %define Name	DyALog
-%define version 1.11.0
-%define release %mkrel 2
+%define version 1.11.2
+%define release %mkrel 1
 
 %if %{mdkversion} < 1010
 	%define __libtoolize /bin/true
@@ -14,7 +14,7 @@ Summary:	Compiler for tabular execution of logic programs
 Summary(fr):	Compilateur pour l'execution tabulaire de programmes logiques
 License:	GPL
 Group:		Sciences/Computer science
-Source:		ftp://ftp.inria.fr/INRIA/Projects/Atoll/Eric.Clergerie/DyALog/%{Name}-%{version}.tar.bz2
+Source:		ftp://ftp.inria.fr/INRIA/Projects/Atoll/Eric.Clergerie/DyALog/%{Name}-%{version}.tar.gz
 Url:		http://atoll.inria.fr/~clerger
 BuildRequires:	libgc-devel
 BuildRequires:	perl-Test-Cmd
