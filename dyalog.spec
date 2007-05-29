@@ -14,14 +14,15 @@ Summary:	Compiler for tabular execution of logic programs
 Summary(fr):	Compilateur pour l'execution tabulaire de programmes logiques
 License:	GPL
 Group:		Sciences/Computer science
-Source:		ftp://ftp.inria.fr/INRIA/Projects/Atoll/Eric.Clergerie/DyALog/%{Name}-%{version}.tar.gz
 Url:		http://atoll.inria.fr/~clerger
+Source:		ftp://ftp.inria.fr/INRIA/Projects/Atoll/Eric.Clergerie/DyALog/%{Name}-%{version}.tar.gz
+Requires:	    automake1.9
+Requires:	    libgc-devel
 BuildRequires:	libgc-devel
 BuildRequires:	perl-Test-Cmd
 BuildRequires:	perl-Test-Simple
-Requires:	automake1.9
-Requires:	libgc-devel
-Buildroot:	%{_tmppath}/%{name}-%{version}
+ExclusiveArch:  %{ix86}
+Buildroot:	    %{_tmppath}/%{name}-%{version}
 
 %description
 DyALog is an experimental compiler of logic programs and grammars
