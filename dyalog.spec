@@ -22,7 +22,6 @@ BuildRequires:	libgc-devel
 BuildRequires:	perl-Test-Cmd
 BuildRequires:	perl-Test-Simple
 ExclusiveArch:  %{ix86}
-Buildroot:	    %{_tmppath}/%{name}-%{version}
 
 %description
 DyALog is an experimental compiler of logic programs and grammars
