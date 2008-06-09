@@ -69,7 +69,9 @@ cat %{_sysconfdir}/ld.so.conf<<EOF
 %{_libdir}/DyALog
 EOF
 %endif
+%if %mdkversion < 200900
 /sbin/ldconfig
+%endif
 
 %preun
 %_remove_install_info %{name}.info
@@ -79,7 +81,9 @@ EOF
 perl -pi -e 's|^%{_libdir}/DyALog\n||' %{_sysconfdir}/ld.so.conf
 %{_libdir}/DyALog
 %endif
+%if %mdkversion < 200900
 /sbin/ldconfig
+%endif
 
 %files
 %defattr(-,root,root)
