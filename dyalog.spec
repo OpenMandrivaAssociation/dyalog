@@ -1,7 +1,7 @@
 %define name	dyalog
 %define Name	DyALog
 %define version 1.11.3
-%define release %mkrel 1
+%define release %mkrel 3
 
 %if %{mdkversion} < 1010
 	%define __libtoolize /bin/true
