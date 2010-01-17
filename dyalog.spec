@@ -32,11 +32,11 @@ grammars for Natural Language processing.
 
 %description -l fr
 DyALog est un compilateur experimental de grammaires et programmes
-logiques concu pour assurer une evaluation tabulaire (c.a.d où les
-sous-calculs sont réutilisés quand c'est possible grâce à un stockage
+logiques concu pour assurer une evaluation tabulaire (c.a.d oÃ¹ les
+sous-calculs sont rÃ©utilisÃ©s quand c'est possible grÃ¢ce Ã  un stockage
 de traces dans une table). Ce compilateur est surtout utile pour
 construire des analyseurs syntaxiques efficaces pour des grammaires
-hautement ambiguës et récursives dans le cadre du traitement de la
+hautement ambiguÃ«s et rÃ©cursives dans le cadre du traitement de la
 langue naturelle.
 
 %prep
