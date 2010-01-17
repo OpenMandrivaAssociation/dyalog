@@ -1,7 +1,7 @@
 %define name	dyalog
 %define Name	DyALog
 %define version 1.12.0
-%define release %mkrel 1
+%define release %mkrel 2
 %define _disable_ld_no_undefined 1
 
 Name:		%{name}
@@ -14,6 +14,7 @@ Group:		Sciences/Computer science
 Url:		http://dyalog.gforge.inria.fr/
 Source:		http://gforge.inria.fr/frs/download.php/5634/%{Name}-%{version}.tar.gz
 Patch0:     DyALog-1.12.0-libgc-7.1-fix.patch
+Patch1:     DyALog-1.12.0-fix-dyacc.patch
 Requires:	    automake1.9
 Requires:	    libgc-devel
 BuildRequires:	libgc-devel
