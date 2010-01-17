@@ -1,7 +1,7 @@
 %define name	dyalog
 %define Name	DyALog
 %define version 1.12.0
-%define release %mkrel 2
+%define release %mkrel 3
 %define _disable_ld_no_undefined 1
 
 Name:		%{name}
@@ -42,6 +42,7 @@ langue naturelle.
 %prep
 %setup -q -n %{Name}-%{version}
 %patch0 -p 1
+%patch1 -p 1
 
 %build
 %configure2_5x
