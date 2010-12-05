@@ -1,7 +1,7 @@
 %define name	dyalog
 %define Name	DyALog
 %define version 1.12.0
-%define release %mkrel 3
+%define release %mkrel 4
 %define _disable_ld_no_undefined 1
 
 Name:		%{name}
