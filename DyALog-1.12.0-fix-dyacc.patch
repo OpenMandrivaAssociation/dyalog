@@ -1,0 +1,46 @@
+diff -Naur -x '*~' DyALog-1.12.0/Compiler/dyacc.in DyALog-1.12.0-fix-dyacc/Compiler/dyacc.in
+--- DyALog-1.12.0/Compiler/dyacc.in	2008-08-21 16:50:24.000000000 +0200
++++ DyALog-1.12.0-fix-dyacc/Compiler/dyacc.in	2010-01-17 01:14:14.000000000 +0100
+@@ -39,7 +39,7 @@
+ 
+ my @CPPFLAGS=split(/\s+/,'@CPPFLAGS@');
+ my @CFLAGS=split(/\s+/,'@CFLAGS@');
+-my @LIBS = split(/\s+/,'@LIBS@');
++my @LIBS = split(/\s+/,'-lbuiltins -ldyalog @LIBS@');
+ 
+ my @DFLAGS=();
+ my @LFLAGS=();
+@@ -400,12 +400,7 @@
+ 
+ if ($dolink) {
+     if (!$dev) {
+-	push(@CFLAGS, @tfsflags,
+-	     "-L$pkglibdir",
+-	     '-lbuiltins',
+-	     '-ldyalog',
+-	     @LIBS
+-	     );
++	push(@CFLAGS, @tfsflags, "-L$pkglibdir");
+     } else {
+ 	push(@CFLAGS, 
+ 	     @tfsflags,
+@@ -414,6 +409,7 @@
+ 	     "$bindir/Runtime/libdyalog.la",
+ 	     "$bindir/Builtins/libbuiltins.la"
+ 	     );
++	@LIBS = ();
+     }
+ }
+ 
+@@ -426,8 +422,9 @@
+ ## Added --mode=link to avoid warning in new versions of Libtool (> 1.5.2)
+ my @CC = (!$dev && !defined $libtool) ? ($CC) : ($libtool,'--mode=link',$CC);
+ 
+-print STDERR join(' ',@CC,@CFLAGS,@cfiles,@sfiles,@ofiles),"\n" if $verbose;
+-system @CC,@CFLAGS,@cfiles,@sfiles,@ofiles;    
++print STDERR join(' ',@CC,@CFLAGS,@cfiles,@sfiles,@ofiles,@LIBS),"\n"
++	if $verbose;
++system @CC,@CFLAGS,@cfiles,@sfiles,@ofiles,@LIBS;    
+ 
+ CLEAN:
+ 

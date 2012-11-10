@@ -1,0 +1,12 @@
+diff -Naur -x '*~' DyALog-1.12.0/Runtime/fol.c DyALog-1.12.0-libgc-7.1-fix/Runtime/fol.c
+--- DyALog-1.12.0/Runtime/fol.c	2008-08-21 16:50:22.000000000 +0200
++++ DyALog-1.12.0-libgc-7.1-fix/Runtime/fol.c	2010-01-16 23:14:11.000000000 +0100
+@@ -409,7 +409,7 @@
+ inline static hash_node_t
+ hnode_allocate( fol_t o, hash_node_t next )
+ {
+-    void *base = (void *) GC_base((GC_PTR)o);
++    void *base = (void *) GC_base((void*)o);
+     hash_node_t node = (hash_node_t) GC_MALLOC_PRINTF("folcmp hash node",sizeof( struct hash_node) );
+ //    weakptr weakptr = (char *) GC_MALLOC_ATOMIC(sizeof(struct weakptr_s));
+     weakptr weakptr = (void *) GC_MALLOC_ATOMIC(sizeof(struct weakptr_s));
