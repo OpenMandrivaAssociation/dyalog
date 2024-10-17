@@ -11,7 +11,7 @@ Summary:	Compiler for tabular execution of logic programs
 Summary(fr):	Compilateur pour l'execution tabulaire de programmes logiques
 License:	GPL
 Group:		Sciences/Computer science
-Url:		http://dyalog.gforge.inria.fr/
+Url:		https://dyalog.gforge.inria.fr/
 Source:		http://gforge.inria.fr/frs/download.php/5634/%{Name}-%{version}.tar.gz
 Patch0:     DyALog-1.12.0-libgc-7.1-fix.patch
 Patch1:     DyALog-1.12.0-fix-dyacc.patch
